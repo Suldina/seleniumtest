@@ -34,13 +34,13 @@ public class Steps {
     public void findElementByCss (String css){
 //        driver.findElement(By.cssSelector(css));
         WebElement dynamicElement = (new WebDriverWait(driver, 5))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(css);
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(css)));
 
     }
-    public void findListOfElements(String css) {
-        List<WebElement> dynamicElements = (new WebDriverWait(driver, 5))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(css);
-    }
+//    public void findListOfElements(String css) {
+//        List<WebElement> dynamicElements = (new WebDriverWait(driver, 5))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(css)));
+//    }
 
 
 
@@ -62,28 +62,20 @@ public class Steps {
         String searchResult = ".products";
         String searchCSS = ".main-form__search-box";
         String btnAddTobag = ".ga-add-to-bag";
-        String btnSearch =""
+        String btnSearch =".ga-sslu-store-button";
+        String imageCSS ="product-image-asset-content.asset-container.cell-asset-bg.js-asset-container.js-product-cursor-container";
 //        findElementByCss(searchCSS);
 //        WebElement element = driver.findElement(By.cssSelector(searchcss))
 //        findElement.sendKeys(fieldToSearch);
 //        dynamicElement.sendKeys(Keys.ENTER);
         String fieldToSearch = "Kensington";
-        setValue(searchCSS, "Kensington");
+        setValue(searchCSS, fieldToSearch);
         setValue(searchCSS, "Keys.Enter");
-        findListOfElements(searchResult);
+        findElementByCss(searchResult);
         findElementByCss(productId);
         click(productId);
         findElementByCss(btnAddTobag);
-
-
-
-
-
-
-
-
-
-
+        findElementByCss(imageCSS);
 
 
     }
