@@ -19,6 +19,17 @@ abstract class FBasePage {
     }
 
 
+    public void moveToElement(By element) {
+        Actions action = new Actions(driver);
+
+        WebElement elem = driver.findElement(element);
+        action.moveToElement(elem);
+        action.perform();
+    }
+
+    public void open(String url) {
+        driver.get(url);
+    }
 
     public void click(By element) {
         driver.findElement(element).click();

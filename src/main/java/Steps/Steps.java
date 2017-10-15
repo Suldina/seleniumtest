@@ -82,17 +82,16 @@ public class Steps {
 //        findElementByCss(imageCSS);
         MainPage mainPage = new MainPage(driver);
         mainPage.open();
-        mainPage.click(By.linkText("Мужчины"));
+        MenPage menPage = mainPage.selectNavigationItemByText("Мужчины");
 //        MenPage menPage = new mainPage.;
         sleep(3000);
-        mainPage.moveToElement(By.id("navigation-bar-link-cat1350556"));
+        menPage.moveToElement(By.id("navigation-bar-link-cat1350556"));
         sleep(3000);
-        mainPage.click(By.cssSelector("a[data-category-id='cat3650040']"));
+        menPage.click(By.cssSelector("a[data-category-id='cat3650040']"));
         sleep(1000);
-        mainPage.moveToElement(By.cssSelector("div[id='wai-material']"));
-        sleep(1500);
-        mainPage.click(By.cssSelector(".facet-checkbox-label "));
-        mainPage.click(By.linkText("Показать результаты"));
+        menPage.selector.selectColorsFacet();
+        menPage.selector.setFacetByValue("Черный");
+
 
 
 //        SearchResultPage searchResultPage = mainPage.searchForItem(itemToSearch);

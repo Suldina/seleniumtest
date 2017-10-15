@@ -22,12 +22,11 @@ public class MainPage extends FBasePage {
     }
 
     public void open() {
-        driver.navigate().to("https://ru.burberry.com/");
+        super.open("https://ru.burberry.com/");
     }
-    public void moveToElement(By element) {
-        Actions action = new Actions(driver);
 
-        WebElement elem = driver.findElement(element);
-        action.moveToElement(elem);
-        action.perform();}
+    public MenPage selectNavigationItemByText(String itemName) {
+        driver.findElement(By.linkText(itemName)).click();
+        return new MenPage(driver);
+    }
 }
