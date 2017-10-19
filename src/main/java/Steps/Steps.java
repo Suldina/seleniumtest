@@ -2,6 +2,7 @@ package Steps;
 
 
 
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -22,8 +23,6 @@ public class Steps {
     String productId="a[data-product-id='39004581']";
 
     String itemToSearch = "Kensington";
-//
-    private WebDriver driver = CHDriver.getWebDriver();
 //////    ChromeDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 ////    public void click (String css){
 ////        driver.findElement(By.cssSelector(css)).click();
@@ -80,25 +79,20 @@ public class Steps {
 //
 //        findElementByCss(btnAddTobag);
 //        findElementByCss(imageCSS);
-        MainPage mainPage = new MainPage(driver);
-        mainPage.open();
+        MainPage mainPage = new MainPage();
+        mainPage.openPage();
         MenPage menPage = mainPage.selectNavigationItemByText("Мужчины");
 //        MenPage menPage = new mainPage.;
-        sleep(3000);
-        menPage.moveToElement(By.id("navigation-bar-link-cat1350556"));
-        sleep(3000);
-        menPage.click(By.cssSelector("a[data-category-id='cat3650040']"));
-        sleep(1000);
-        menPage.selector.selectColorsFacet();
-        menPage.selector.setFacetByValue("Черный");
+
+
+
 
 
 
 //        SearchResultPage searchResultPage = mainPage.searchForItem(itemToSearch);
      //   assertThat(searchResultPage.getSearchResultsCount().toLowerCase(), is("37"));
 //        searchResultPage.header.selectFirstMenu();
-     //   searchResultPage.selectFirstProduct();
-        driver.quit();
+     //   searchResultPage.selectFirstProduct
     }
 
 
